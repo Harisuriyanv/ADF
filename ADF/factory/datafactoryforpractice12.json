@@ -1,0 +1,14 @@
+{
+	"name": "datafactoryforpractice12",
+	"properties": {
+		"globalConfigurations": {
+			"PipelineBillingEnabled": "true"
+		}
+	},
+	"location": "westus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ea466a65-676b-46c9-bfec-30156d7463dc",
+		"tenantId": "ee886d38-d215-45a3-9825-d40a345277af"
+	}
+}

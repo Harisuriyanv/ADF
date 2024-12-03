@@ -1,0 +1,27 @@
+{
+	"name": "Trigger_StorageEvent",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_Copy_PO_dynamic_file_storage event trigger",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"FileName": "@triggerBody().fileName"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/datafactory/blobs/source/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/2caa976d-de9e-4de7-8d16-35ceaa6e815c/resourceGroups/datafactory/providers/Microsoft.Storage/storageAccounts/storageaccountfordfgen2",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

@@ -1,0 +1,54 @@
+{
+	"name": "DS_STorage_OLTP_purchaseOrder",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "PurchaseOrder.txt",
+				"folderPath": "source",
+				"fileSystem": "datafactory"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "PurchaseOrderID",
+				"type": "String"
+			},
+			{
+				"name": " CustomerCode",
+				"type": "String"
+			},
+			{
+				"name": "ProductCode",
+				"type": "String"
+			},
+			{
+				"name": "EmployeeCode",
+				"type": "String"
+			},
+			{
+				"name": " PuchaseOrderDate",
+				"type": "String"
+			},
+			{
+				"name": " Quantity",
+				"type": "String"
+			},
+			{
+				"name": " UnitPrice",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
