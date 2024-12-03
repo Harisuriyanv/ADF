@@ -1,6 +1,7 @@
 {
 	"name": "PL_Main_IncrementalLoad",
 	"properties": {
+		"description": "this is used to load the data",
 		"activities": [
 			{
 				"name": "LKP_Config",
