@@ -1,0 +1,57 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "datafactoryforpractice12"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"LS_SQL_SourceDB_password": {
+			"value": ""
+		},
+		"LS_SQL_Target DB_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://storageaccountfordfgen2.dfs.core.windows.net/"
+		},
+		"LS_SQL_SourceDB_properties_typeProperties_server": {
+			"value": "datafactory12.database.windows.net"
+		},
+		"LS_SQL_SourceDB_properties_typeProperties_database": {
+			"value": "datafactorydb"
+		},
+		"LS_SQL_SourceDB_properties_typeProperties_userName": {
+			"value": "Datafactory"
+		},
+		"LS_SQL_Target DB_properties_typeProperties_server": {
+			"value": "datafactory12.database.windows.net"
+		},
+		"LS_SQL_Target DB_properties_typeProperties_database": {
+			"value": "projectdatabase"
+		},
+		"LS_SQL_Target DB_properties_typeProperties_userName": {
+			"value": "Datafactory"
+		},
+		"StorageTrigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/2caa976d-de9e-4de7-8d16-35ceaa6e815c/resourceGroups/datafactory/providers/Microsoft.Storage/storageAccounts/storageaccountfordfgen2"
+		},
+		"TGL_StorageEvemtTrigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/2caa976d-de9e-4de7-8d16-35ceaa6e815c/resourceGroups/datafactory/providers/Microsoft.Storage/storageAccounts/storageaccountfordfgen2"
+		},
+		"Trigger_StorageEvent_properties_PL_Copy_PO_dynamic_file_storage event trigger_parameters_FileName": {
+			"value": "@triggerBody().fileName"
+		},
+		"Trigger_StorageEvent_properties_typeProperties_scope": {
+			"value": "/subscriptions/2caa976d-de9e-4de7-8d16-35ceaa6e815c/resourceGroups/datafactory/providers/Microsoft.Storage/storageAccounts/storageaccountfordfgen2"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

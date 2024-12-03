@@ -1,0 +1,160 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "datafactoryforpractice12"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"LS_SQL_SourceDB_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQL_SourceDB'"
+		},
+		"LS_SQL_Target DB_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQL_Target DB'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storageaccountfordfgen2.dfs.core.windows.net/"
+		},
+		"LS_SQL_SourceDB_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "datafactory12.database.windows.net"
+		},
+		"LS_SQL_SourceDB_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "datafactorydb"
+		},
+		"LS_SQL_SourceDB_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Datafactory"
+		},
+		"LS_SQL_Target DB_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "datafactory12.database.windows.net"
+		},
+		"LS_SQL_Target DB_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "projectdatabase"
+		},
+		"LS_SQL_Target DB_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Datafactory"
+		},
+		"StorageTrigger_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/2caa976d-de9e-4de7-8d16-35ceaa6e815c/resourceGroups/datafactory/providers/Microsoft.Storage/storageAccounts/storageaccountfordfgen2"
+		},
+		"TGL_StorageEvemtTrigger_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/2caa976d-de9e-4de7-8d16-35ceaa6e815c/resourceGroups/datafactory/providers/Microsoft.Storage/storageAccounts/storageaccountfordfgen2"
+		},
+		"Trigger_StorageEvent_properties_PL_Copy_PO_dynamic_file_storage event trigger_parameters_FileName": {
+			"type": "string",
+			"defaultValue": "@triggerBody().fileName"
+		},
+		"Trigger_StorageEvent_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/2caa976d-de9e-4de7-8d16-35ceaa6e815c/resourceGroups/datafactory/providers/Microsoft.Storage/storageAccounts/storageaccountfordfgen2"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "datafactoryforpractice12_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"LS_SQL_SourceDB_password": {
+						"value": "[parameters('LS_SQL_SourceDB_password')]"
+					},
+					"LS_SQL_Target DB_password": {
+						"value": "[parameters('LS_SQL_Target DB_password')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"LS_SQL_SourceDB_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQL_SourceDB_properties_typeProperties_server')]"
+					},
+					"LS_SQL_SourceDB_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQL_SourceDB_properties_typeProperties_database')]"
+					},
+					"LS_SQL_SourceDB_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQL_SourceDB_properties_typeProperties_userName')]"
+					},
+					"LS_SQL_Target DB_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQL_Target DB_properties_typeProperties_server')]"
+					},
+					"LS_SQL_Target DB_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQL_Target DB_properties_typeProperties_database')]"
+					},
+					"LS_SQL_Target DB_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQL_Target DB_properties_typeProperties_userName')]"
+					},
+					"StorageTrigger_properties_typeProperties_scope": {
+						"value": "[parameters('StorageTrigger_properties_typeProperties_scope')]"
+					},
+					"TGL_StorageEvemtTrigger_properties_typeProperties_scope": {
+						"value": "[parameters('TGL_StorageEvemtTrigger_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "datafactoryforpractice12_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"Trigger_StorageEvent_properties_PL_Copy_PO_dynamic_file_storage event trigger_parameters_FileName": {
+						"value": "[parameters('Trigger_StorageEvent_properties_PL_Copy_PO_dynamic_file_storage event trigger_parameters_FileName')]"
+					},
+					"Trigger_StorageEvent_properties_typeProperties_scope": {
+						"value": "[parameters('Trigger_StorageEvent_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'datafactoryforpractice12_ArmTemplate_0')]"
+			]
+		}
+	]
+}
